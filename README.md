@@ -26,5 +26,3 @@ An example for paste:
 		function(e){alert(e)}
 	);
 ```
-
-## Plugin developer notes ##
