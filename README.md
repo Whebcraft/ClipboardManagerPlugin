@@ -1,3 +1,5 @@
+##Phonegap Android plugin for interacting with Android ClipbaordManager##
+
 This version of the plugin is for Phonegap versions >= 3.0.0
 
 use cordova cli to add this plugin:
