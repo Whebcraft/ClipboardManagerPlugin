@@ -13,7 +13,7 @@
                 <param name="android-package" value="com.saatcioglu.cordova.clipboardmanager.ClipboardManager" />
             </feature>
         </config-file>
-        <source-file src="src/android/ClipboardManager.java.java" target-dir="com/saatcioglu/cordova/clipboardmanager/ClipboardManager" />
+        <source-file src="src/android/ClipboardManager.java" target-dir="src/com/saatcioglu/cordova/clipboardmanager/ClipboardManager" />
 
         <js-module src="www/clipboardmanager.js" name="clipboardManager">
             <merges target="navigator.clipboardManager" />

@@ -1,38 +1,30 @@
 This version of the plugin is for Phonegap versions >= 3.0.0
 
-## Adding the Plugin to your project ##
-1. To install the plugin, move clipboardmanager.js to your project's www folder and include a reference to it in your html files. 
-2. Create a folder called 'src/com/saatcioglu/phonegap/ClipboardManagerPlugin' within your project's src folder. Note that case is important.
-3. Copy ClipboardManagerPlugin.java into that new folder.
-4. Add the following line in your plugins.xml (located in /res/xml/)
-<plugin name="ClipboardManagerPlugin" value="com.saatcioglu.phonegap.ClipboardManagerPlugin.ClipboardManagerPlugin"/>
+use cordova cli to add this plugin:
+```bash
+cordova plugin add https://github.com/gitawego/ClipboardManagerPlugin.git
+```
 
-## Using the plugin ##
-The plugin creates 2 methods on the window object
-
-`window.clipboardManagerCopy(str, success, fail)` that copies the given string into the clipboard
-`window.clipboardManagerPaste(success, fail)` that returns the text from the clipboard
+`navigator.clipboardManager.copy(str, success, fail)` that copies the given string into the clipboard
+`navigator.clipboardManager.paste(success, fail)` that returns the text from the clipboard
 
 `success` and `fail` are callback functions. 
 
 An example for copy:
-
-	window.clipboardManagerCopy(
+```js
+	navigator.clipboardManager.copy(
 		"the text to copy",
 		function(r){alert("copy is successful")},
 		function(e){alert(e)}
 	);
+```
 
 An example for paste:
-
-	window.clipboardManagerPaste(
+```js
+	navigator.clipboardManager.paste(
 		function(r){alert("The text in the clipboard is " + r)},
 		function(e){alert(e)}
 	);
+```
 
 ## Plugin developer notes ##
-
-The name of the Java class was changed to ClipboardManagerPlugin because ClipboardManager is the name of the Android class this plugin interacts with. Duplicating the name of an existing class causes a name collision error. http://developer.android.com/reference/android/content/ClipboardManager.html 
-
-The plugin reference in the plugins.xml file must specifiy the location of the class of the plugin, not the file. That's why ClipboardManagerPlugin is repeated twice, once for the file and once for the name of the class.
-
