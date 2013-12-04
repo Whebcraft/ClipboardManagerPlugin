@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.saatcioglu.cordova.clipboardmanager" version="2.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>ClipboardManager</name>
+    <description>Clipboard manager for Android</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,clipboard</keywords>
+    <repo>https://github.com/gitawego/ClipboardManagerPlugin.git</repo>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ClipboardManager">
+                <param name="android-package" value="com.saatcioglu.cordova.clipboardmanager.ClipboardManager" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/ClipboardManager.java.java" target-dir="com/saatcioglu/cordova/clipboardmanager/ClipboardManager" />
+
+        <js-module src="www/clipboardmanager.js" name="clipboardManager">
+            <merges target="navigator.clipboardManager" />
+        </js-module>
+    </platform>
+</plugin>

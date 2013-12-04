@@ -3,9 +3,10 @@
  * Omer Saatcioglu 2011
  * enhanced by Guillaume Charhon - Smart Mobile Software 2011
  * ported to Phonegap 2.0 by Jacob Robbins
+ * Hongbo LU - Phonegap 3.x port 2013
  */
 
-package com.saatcioglu.phonegap.ClipboardManagerPlugin;
+package com.saatcioglu.cordova.clipboardmanager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,12 +15,12 @@ import android.content.Context;
 import android.text.ClipboardManager;
 
 
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.PluginResult;
 
 
-public class ClipboardManagerPlugin extends CordovaPlugin {
+public class ClipboardManager extends CordovaPlugin {
 	private static final String actionCopy = "copy";
 	private static final String actionPaste = "paste";
 	private static final String errorParse = "Couldn't get the text to copy";
